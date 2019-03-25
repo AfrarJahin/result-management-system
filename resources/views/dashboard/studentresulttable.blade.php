@@ -44,7 +44,7 @@
 
             <!-- left side -->
             <!-- right side -->
-             
+
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <form  action="{{ route('logout') }}" method="POST" style="display:block !important" class="mr-auto">
@@ -67,7 +67,7 @@
     </aside>
 
      <div class="container">
-        <table class="table" style="width:1000px;">
+        <table class="table" style="width:900px;">
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
@@ -97,7 +97,7 @@
       <td>{{$mark->attendance}}</td>
       <td>{{$mark->total}}</td>
       <td>Otto</td>
-      
+
     </tr>
     @endforeach
   </tbody>

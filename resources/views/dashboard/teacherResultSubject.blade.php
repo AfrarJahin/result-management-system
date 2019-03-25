@@ -44,7 +44,7 @@
 
             <!-- left side -->
             <!-- right side -->
-             
+
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <form  action="{{route('logout') }}" method="POST" style="display:block !important" class="mr-auto">
@@ -66,7 +66,7 @@
         </ul>
     </aside>
     <div class="container">
-        <table class="table" style="width:1000px;">
+        <table class="table" style="width:900px;">
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
@@ -99,7 +99,7 @@
       <td>
         <a href="/dashboard/teacher/result/edit/{{$mark->id}}">Edit</a>
       </td>
-      
+
     </tr>
     @endforeach
   </tbody>

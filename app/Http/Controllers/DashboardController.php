@@ -6,12 +6,18 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+
+
     public function student(){
         return view('dashboard.student');
     }
+
+
     public function teacher(){
         return view('dashboard.teacher');
     }
+
+
     public function teacheraddcourse(Request $request){
         if (!\Gate::allows('approved')) {
             $request->session()->flash('msg','you need to be approved first');
@@ -27,11 +33,14 @@ class DashboardController extends Controller
 
         }
         else //1st step
-        {   
+        {
             return view('dashboard.teacheraddcourse');
         }
 
     }
+
+
+
     public function studentaddcourse(Request $request){
 
             if(isset($request->year)) //2nd step
@@ -46,6 +55,9 @@ class DashboardController extends Controller
         }
         return view('dashboard.studentaddcourse');
     }
+
+
+
     public function studentregister(Request $request,\App\Subject $subject){
 
             $mark = new \App\Mark;
@@ -57,6 +69,9 @@ class DashboardController extends Controller
             //$subject->marks->save($mark);
             return redirect()->back();
     }
+
+
+
     public function studentunregister(Request $request,\App\Subject $subject){
         $mark = \App\Mark::where('year',$request->year)->
         where('student_id',\Auth::user()->userable->id)->
@@ -64,8 +79,12 @@ class DashboardController extends Controller
 
             $mark->delete();
 
-           return redirect()->back(); 
+           return redirect()->back();
     }
+
+
+
+
     public function result(){
 
         $subjects = \App\Subject::where('teacher_id',\Auth::user()->userable->id)->
@@ -73,17 +92,27 @@ class DashboardController extends Controller
 
         return view('dashboard.teacherresult')->with(['subjects'=>$subjects]);
     }
+
+
+
     public function teacherResultSubject(\App\Subject $subject){
 
         $marks = $subject->marks()->with('student')->get();
         //dd($marks);
         return view('dashboard.teacherResultSubject')->with(['marks'=>$marks]);
     }
+
+
+
     public function teacherResultMarkEdit(\App\Mark $mark){
 
-        
+
         return view('dashboard.teacherResultMarkEdit')->with(['mark'=>$mark->load('student')]);
     }
+
+
+
+
     public function teacherResultMarkStore(Request $request,\App\Mark $mark){
 
         $mark->tt1 = $request->tt1;
@@ -97,6 +126,10 @@ class DashboardController extends Controller
         $mark->save();
         return redirect()->back();
     }
+
+
+
+
     public function studentresult(Request $request){
 
        if(isset($request->year))
@@ -114,8 +147,11 @@ class DashboardController extends Controller
 
         return view('dashboard.studentresultshow');
     }
+
+
+    
      public function submit(Request $request){
-     	
+
         //dd(\App\Course::where('semester',$request->semester)->where('department_id',$request->department)->get());
         dd(\App\Subject::where('year',$request->year)->get());
     }
