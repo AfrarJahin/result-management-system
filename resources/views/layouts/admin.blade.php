@@ -21,12 +21,12 @@
   <!-- Custom styles for this template-->
   <link href="/css/sb.min.css" rel="stylesheet">
   <link rel="stylesheet" type="" href="/mycss.css">
-  
+
 
 </head>
 
 <body id="page-top">
-  
+
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -68,18 +68,18 @@
         <a class="nav-link" href="/admin/teachers">
           <i class="fas fa-fw fa-chalkboard-teacher"></i>
           <span>Teachers</span></a>
-      </li> 
+      </li>
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
         <a class="nav-link" href="/admin/results">
           <i class="fas fa-fw fa-poll"></i>
           <span>Results</span></a>
-      </li>  
+      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
 
-  
+
 
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
@@ -104,14 +104,14 @@
           </button>
 
           <h3>Admin Dashboard</h3>
-          
+
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-           
-          
+
+
             <li class="nav-item active">
             <form method="post" action="/adminlogout">
               @csrf
@@ -121,7 +121,7 @@
           </li>
             <!-- <div class="topbar-divider d-none d-sm-block"></div> -->
 
-             
+
 
           </ul>
 
@@ -160,7 +160,7 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  
+
   <!-- Bootstrap core JavaScript-->
   <script src="/vendor/jquery.min.js"></script>
   <script src="/vendor/b.min.js"></script>

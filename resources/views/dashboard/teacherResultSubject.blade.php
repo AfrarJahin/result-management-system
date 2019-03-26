@@ -1,8 +1,8 @@
 @extends('layouts.teacher')
 @section('content')
-    <div class="container">
-        <table class="table" style="width:1020px;">
-  <thead class="thead-dark">
+<div class="container">
+    <table class="table table-hover">
+        <thead class="table-info">
     <tr>
       <th scope="col">#</th>
       <th scope="col">Reg No</th>
@@ -35,7 +35,7 @@
       <td>
         <a href="/dashboard/teacher/result/edit/{{$mark->id}}" class="btn btn-primary" role ="button">Edit</a>
       </td>
-      
+
     </tr>
     @endforeach
   </tbody>

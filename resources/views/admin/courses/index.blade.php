@@ -1,16 +1,34 @@
 @extends('layouts.admin')
 @section('content')
+<form action="/admin/courses/create">
+    <button class="btn btn-primary">Create </button>
+</form>
+<div class="container">
+    <table class="table table-hover">
+        <thead class="table-info">
+<tr>
+    <th scope="col">Course id</th>
+    <th scope="col">Course Name</th>
+    <th scope="col">Course Code</th>
+    <th scope="col">Button</th>
+</tr>
+</thead>
+<tbody>
     @foreach($courses as $course)
-    <div>{{$course->id}} &nbsp;{{$course->name}} &nbsp;{{$course->code}} &nbsp; 
+    <tr>
+  <td>{{$course->id}}</td>
+   <td>{{$course->name}}</td>
+    <td>{{$course->code}}</td>
+    <td>
         <form method="post" style="display: inline;" action="/admin/courses/{{$course->id}}">
             @csrf
             @method('DELETE')
             <button class="btn btn-danger">delete</button>
         </form>
-
-    </div>
+      </td>
+    </tr>
     @endforeach
-    <form action="/admin/courses/create">
-        <button class="btn btn-primary">Create </button>
-    </form>
+  </tbody>
+</table>
+
   @endsection
