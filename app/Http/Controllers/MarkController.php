@@ -16,7 +16,7 @@ class MarkController extends Controller
     {
             if(isset($request->semester))
             {
-                $courses= \App\Course::where('department_id',$request->department)->where('semester',$request->semester)->get();
+                $courses= \App\Course::where('department_id',$request->department)->where('semester',$request->semester)->get(); 
 
 
 
@@ -32,7 +32,7 @@ class MarkController extends Controller
                 for($i=0;$i<count($marks);$i++){
                     $arr[$marks[$i]->student_id] = 1;
                 }
-
+                
                 return view('admin.results.show')->with([
                     'courses'=>$courses,
                     'marks'=>$marks->load('subject'),
@@ -61,7 +61,7 @@ class MarkController extends Controller
      */
     public function store(Request $request)
     {
-
+       
     }
 
     /**

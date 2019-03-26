@@ -131,53 +131,9 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-
-
-
-    <div class="container">
-     
-    <table class="table table-hover" id="example">
-    <thead class="table-info">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Reg No</th>
-      @foreach($courses as $course)
-      <th scope="col">{{$course->code}}</th>
-      @endforeach
-      <th scope="col">Gpa</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-      @foreach($arr as $a => $v)
-      <tr>
-        <td scope="col">1</td>
-        <!-- <td scope="col"></td> -->
-        @foreach($courses as $course)
-          @foreach($marks as $mark)
-            @if($mark->student_id==$a && $mark->subject->course_id==$course->id)
-            
-            <td scope="col">{{$mark->total}}</td> 
-
-            @endif
-          @endforeach
-        @endforeach
-        </tr>
-      @endforeach
-  </tbody>
-</table>
-    </div>
-
-
-
-
-<p class="lead"> <button id="pdf" class="btn btn-danger">Download as PDF</button></p>
-
-
- 
-
-
-</div>
+          <!-- main -->
+          @yield('content')
+        </div>
         <!-- /.container-fluid -->
 
       </div>
@@ -215,19 +171,6 @@
   <!-- Custom scripts for all pages-->
   <script src="/js/sb.min.js"></script>
 
-
-
- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.5/jspdf.plugin.autotable.min.js"></script>
-
-<script src="/tableHTMLExport.js"></script>
-    <script>
- 
-  $('#pdf').on('click',function(){
-    $("#example").tableHTMLExport({type:'pdf',filename:'sample.pdf'});
-  })
-  </script>
 </body>
 
 </html>

@@ -11,7 +11,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#"><h3>ADMIN DASHBOARD</h3></a>
+        <a class="navbar-brand" href="#"><h2><i>ADMIN DASHBOARD</i></h2></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -44,7 +44,7 @@
 
             <!-- left side -->
             <!-- right side -->
-             
+
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <form  action="{{route('logout') }}" method="POST" style="display:block !important" class="mr-auto">
@@ -59,25 +59,28 @@
 
     <aside style="background:#aabecf; width:250px;height:700px; float:left;">
         <ul>
-           <li> <a href="/admin/departments" class=""><h4>Departments</h4></a></l1>
+          <li> <a href="/admin/departments" class=""><h3>Departments</h3></a></l1>
         </ul>
         <ul>
-            <li><a href="/admin/courses" class=""><h4>Courses</h4></a></li>
+            <li><a href="/admin/courses" class=""><h3>Courses</h3></a></li>
         </ul>
         <ul>
-           <li> <a href="/admin/students" class=""><h4>Students</h4></a></l1>
+           <li> <a href="/admin/students" class=""><h3>Students</h3></a></l1>
         </ul>
         <ul>
-           <li> <a href="/admin/teachers" class=""><h4>Teacher</h4></a></l1>
+           <li> <a href="/admin/teachers" class=""><h3>Teacher</h3></a></l1>
         </ul>
         <ul>
-           <li> <a href="/admin/results" class=""><h4>Results</h4></a></l1>
+           <li> <a href="/admin/results" class=""><h3>Results</h3></a></l1>
         </ul>
     </aside>
 @if(session('msg'))
 {{session('msg')}}
 @endif
    <style type="text/css">
+    h3{
+      color:blue;
+    }
         li{
             text-decoration: none;
             list-style: none;

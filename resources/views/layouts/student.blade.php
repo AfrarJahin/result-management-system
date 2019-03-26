@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Admin Dashboard</title>
+  <title>Student Dashboard</title>
 
   <!-- Custom fonts for this template-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -47,34 +47,17 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="/admin/departments">
+        <a class="nav-link" href="/dashboard/student/addcourse">
           <i class="fas fa-fw fa-building"></i>
-          <span>Departments</span></a>
+          <span>Add or Remove Courses</span></a>
       </li>
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="/admin/courses">
+        <a class="nav-link" href="/dashboard/student/result">
           <i class="fas fa-fw fa-book"></i>
-          <span>Courses</span></a>
+          <span>Check your Result</span></a>
       </li>
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item">
-        <a class="nav-link" href="/admin/students">
-          <i class="fas fa-fw fa-user-graduate"></i>
-          <span>Students</span></a>
-      </li>
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item">
-        <a class="nav-link" href="/admin/teachers">
-          <i class="fas fa-fw fa-chalkboard-teacher"></i>
-          <span>Teachers</span></a>
-      </li> 
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item">
-        <a class="nav-link" href="/admin/results">
-          <i class="fas fa-fw fa-poll"></i>
-          <span>Results</span></a>
-      </li>  
+      
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -103,7 +86,7 @@
             <i class="fa fa-bars"></i>
           </button>
 
-          <h3>Admin Dashboard</h3>
+          <h3>Student Dashboard</h3>
           
 
           <!-- Topbar Navbar -->
@@ -113,7 +96,7 @@
            
           
             <li class="nav-item active">
-            <form method="post" action="/adminlogout">
+            <form method="post" action="{{route('logout') }}">
               @csrf
 
               <button type="submit" class="btn btn-primary">Logout</button>
@@ -131,53 +114,9 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-
-
-
-    <div class="container">
-     
-    <table class="table table-hover" id="example">
-    <thead class="table-info">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Reg No</th>
-      @foreach($courses as $course)
-      <th scope="col">{{$course->code}}</th>
-      @endforeach
-      <th scope="col">Gpa</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-      @foreach($arr as $a => $v)
-      <tr>
-        <td scope="col">1</td>
-        <!-- <td scope="col"></td> -->
-        @foreach($courses as $course)
-          @foreach($marks as $mark)
-            @if($mark->student_id==$a && $mark->subject->course_id==$course->id)
-            
-            <td scope="col">{{$mark->total}}</td> 
-
-            @endif
-          @endforeach
-        @endforeach
-        </tr>
-      @endforeach
-  </tbody>
-</table>
-    </div>
-
-
-
-
-<p class="lead"> <button id="pdf" class="btn btn-danger">Download as PDF</button></p>
-
-
- 
-
-
-</div>
+          <!-- main -->
+          @yield('content')
+        </div>
         <!-- /.container-fluid -->
 
       </div>
@@ -215,19 +154,6 @@
   <!-- Custom scripts for all pages-->
   <script src="/js/sb.min.js"></script>
 
-
-
- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.5/jspdf.plugin.autotable.min.js"></script>
-
-<script src="/tableHTMLExport.js"></script>
-    <script>
- 
-  $('#pdf').on('click',function(){
-    $("#example").tableHTMLExport({type:'pdf',filename:'sample.pdf'});
-  })
-  </script>
 </body>
 
 </html>
