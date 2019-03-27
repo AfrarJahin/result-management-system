@@ -1,17 +1,8 @@
 @extends('layouts.admin')
 @section('content')
-    <!-- <form action="/admin/departments" method="post">
-
-       @csrf
-        <input type="text" name="name" placeholder="name">
-        <input type="text" name="code" placeholder="code">
-        <button type="submit">Create</button>
-    </form> -->
-
-
     <form  action="/admin/departments" method="post">
   <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Department Name:</label>
+    <label for="name" class="col-sm-2 col-form-label">Department Name:</label>
     <div class="col-sm-10">
       <input type="text" name="name" class="form-control" id="inputEmail3" placeholder="Enter Department Name">
     </div>
@@ -19,7 +10,7 @@
  @csrf
 
   <div class="form-group row">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">Department code:</label>
+    <label for="code" class="col-sm-2 col-form-label">Department code:</label>
     <div class="col-sm-10">
       <input type="text" name="code" class="form-control" id="inputPassword3" placeholder="Enter department code">
     </div>

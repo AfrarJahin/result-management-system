@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 @section('content')
-<div class="container">
+    <div class="container">
     <table class="table table-hover">
-        <thead class="table-info">
+        <thead class="table-primary">
 <tr>
     <th scope="col">Teacher Id</th>
     <th scope="col"> Name</th>
@@ -20,9 +20,9 @@
      <td>{{$teacher->phone}}</td>
       <td>
         @if($teacher->approved)
-        <a href="/admin/teachers/block/{{$teacher->id}}">block</a>
+        <a href="/admin/teachers/block/{{$teacher->id}}" class="btn btn-danger" role="button">block</a>
         @else
-            <a href="/admin/teachers/approve/{{$teacher->id}}">approve</a>
+            <a href="/admin/teachers/approve/{{$teacher->id}}" class="btn btn-primary" role ="button">approve</a>
         @endif
       </td>
       <td>

@@ -1,8 +1,8 @@
 @extends('layouts.teacher')
 @section('content')
-<div class="container">
+    <div class="container">
     <table class="table table-hover">
-        <thead class="table-info">
+  <thead class= "table-primary">
     <tr>
       <th scope="col">#</th>
       <th scope="col">Reg No</th>
@@ -19,9 +19,10 @@
     </tr>
   </thead>
   <tbody>
+    <?php $i = 1; ?>
     @foreach($marks as $mark)
     <tr>
-      <th scope="row">1</th>
+      <th scope="row">{{$i++}}</th>
       <td>{{$mark->student->reg_no}}</td>
       <td>{{$mark->tt1}}</td>
       <td>{{$mark->tt2}}</td>
@@ -35,7 +36,7 @@
       <td>
         <a href="/dashboard/teacher/result/edit/{{$mark->id}}" class="btn btn-primary" role ="button">Edit</a>
       </td>
-
+      
     </tr>
     @endforeach
   </tbody>

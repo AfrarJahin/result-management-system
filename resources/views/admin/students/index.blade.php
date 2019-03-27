@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 @section('content')
-<div class="container">
+    <div class="container">
     <table class="table table-hover">
-        <thead class="table-info">
+        <thead class="table-primary">
 <tr>
     <th scope="col">Student Id</th>
     <th scope="col"> Name</th>

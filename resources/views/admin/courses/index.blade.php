@@ -1,11 +1,8 @@
 @extends('layouts.admin')
 @section('content')
-<form action="/admin/courses/create">
-    <button class="btn btn-primary">Create </button>
-</form>
 <div class="container">
     <table class="table table-hover">
-        <thead class="table-info">
+        <thead class="table-primary">
 <tr>
     <th scope="col">Course id</th>
     <th scope="col">Course Name</th>
@@ -30,5 +27,7 @@
     @endforeach
   </tbody>
 </table>
-
+    <form action="/admin/courses/create">
+        <button class="btn btn-primary">Create </button>
+    </form>
   @endsection
