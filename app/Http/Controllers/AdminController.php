@@ -7,21 +7,29 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+
+
     public function __construct(){
         $this->middleware('auth:admin')->except(['login','loginpost']);
     }
 
+
+
     public function dashboard()
     {
-        return view('layouts.admin');
+        return view('dashboard.admin');
     }
+
+
     public function login()
     {
         return view('admin.auth.login');
     }
+
+
     public function loginpost(Request $request)
     {
-        
+
         $credentials = $request->only('email', 'password');
 
         if (\Auth::guard('admin')->attempt($credentials)) {
@@ -29,11 +37,16 @@ class AdminController extends Controller
         }
         return redirect('/admin/login');
     }
+
+
+
     public function logout()
     {
         \Auth ::guard('admin')->logout();
          return redirect('/');
     }
+
+
     /**
      * Display a listing of the resource.
      *

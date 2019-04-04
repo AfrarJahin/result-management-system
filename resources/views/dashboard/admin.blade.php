@@ -127,6 +127,7 @@
 
         </nav>
         <!-- End of Topbar -->
+        <h1><center>Welcome to admin page</center></h1>
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
